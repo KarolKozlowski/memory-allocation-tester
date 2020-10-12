@@ -1,0 +1,9 @@
+[Unit]
+Description=memory limit slice
+
+[Slice]
+MemoryAccounting=yes
+MemoryAccounting=true
+MemoryLimit=256M
+MemoryHigh=128M
+MemoryMax=256G
