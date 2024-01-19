@@ -14,10 +14,10 @@ int main(int argc, char **argv) {
   printf("[INFO] Will allocate %lu bytes...\n", slices * slice_size * sizeof(int));
 
   for (int i = 0; i < slices; i++) {
-    printf("[INFO] allocating slice %d (%lu bytes)\n", i, slice_size * sizeof(int) * i);
+    printf("[INFO] allocating slice %d (%lu bytes)\n", i, slice_size * sizeof(int) * (i + 1));
     ptr[i] = (int*)malloc(slice_size * sizeof(int));
     if ( ptr[i]==NULL ) {
-      printf("[ERROR] Memory not allocated!");
+      printf("[ERROR] Memory not allocated (%lu) ", slice_size * sizeof(int) * (i + 1));
       exit(1);
     }
     printf("[INFO] Filling memory...\n");
